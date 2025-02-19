@@ -15,8 +15,10 @@ class Doodle:
         self.speed = 5
         self.gravity = 0.5
 
+    def output(self):  # вывод функции на экран, рисовка дудлика
+        self.screen.blit(self.image, self.rectangle)  # метод отрисовки для дудлика
 
 
 
 
-
+        
