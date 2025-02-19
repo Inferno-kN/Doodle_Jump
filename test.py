@@ -1,33 +1,29 @@
 import pygame
 import sys
-
-#инициализация pygame
-pygame.init()
-
-#Настройки Экрана
-width, height = 1000, 600
-
-screen = pygame.display.set_mode((width, height))
-pygame.display.set_caption("Doodle Jump")
+from Doodlik import Doodle
 
 #Цвета
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-
-#Основной игровой цикл
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-    #логика игры
-    screen.fill(WHITE)
+WHITE = 255, 255, 255
+BLACK = 0, 0, 0
 
 
-    #Обновление экрана
-    pygame.display.flip()
+def run():
+    pygame.init()
 
-#Завершение игры
-pygame.quit()
-sys.exit()
+    screen = pygame.display.set_mode((800, 600))
+    pygame.display.set_caption("Лютый джамп")
+    doodle = Doodle(screen)
+
+
+    while True:
+        for event in pygame.event.get(): #получаем события пользователя
+            if event.type == pygame.QUIT:
+                sys.exit()
+
+        screen.fill(WHITE) #установили белый фон
+        doodle.output() # отрисовка на главный экран нашего дудлика
+        pygame.display.flip() # обновление экрана
+
+
+
+run()
