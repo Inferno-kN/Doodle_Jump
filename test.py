@@ -24,6 +24,4 @@ def run():
         doodle.output() # отрисовка на главный экран нашего дудлика
         pygame.display.flip() # обновление экрана
 
-
-
 run()
