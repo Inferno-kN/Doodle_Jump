@@ -13,15 +13,17 @@ def run():
     screen = pygame.display.set_mode((800, 600))
     pygame.display.set_caption("Лютый джамп")
     doodle = Doodle(screen)
+    clock = pygame.time.Clock()
 
 
     while True:
-        for event in pygame.event.get(): #получаем события пользователя
+        for event in pygame.event.get(): #получаем события пользователя (по типу нажал на клавишу и тд)
             if event.type == pygame.QUIT:
                 sys.exit()
 
         screen.fill(WHITE) #установили белый фон
         doodle.output() # отрисовка на главный экран нашего дудлика
         pygame.display.flip() # обновление экрана
+        clock.tick(90) #ставим ограничение на фпс до 90
 
 run()
